@@ -24,19 +24,19 @@
 		<h1>Detalhes do Jogo</h1>
 		<table class='detalhes'>
 			<?php
+			
+			
 			if (!$busca) {
 				echo "Busca Falhou";
 			} else {
 				if ($busca->num_rows == 1) {
 					$reg = $busca->fetch_object();
 					$t = thumb($reg->capa);
-					echo	"<tr>";
-					echo	"<td rowspan='3'><img src='$t'>";
-					echo	"<td>$reg->nome";
-					echo	"<tr>";
-					echo	"<td>$reg->descricao</td>";
-					echo	"<tr>";
-					echo	"<td>Adm</td>";
+					echo	"<tr><td rowspan='4'><img class='full' src='$t'>";
+					echo	"<td><h2>$reg->nome</h2>";
+					echo  "<tr><td>" . number_format($reg->nota, 1, ".") . " /10.0";
+					echo	"<tr><td>$reg->descricao</td>";
+					echo	"<tr><td>Adm";
 				} else {
 					var_dump($banco);
 				}
@@ -44,6 +44,7 @@
 			?>
 
 		</table>
+		<a href="index.php"><img src="./icones/icoback.png" alt=""></a>
 	</div>
 
 	<?php $banco->close(); ?>

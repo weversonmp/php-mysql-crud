@@ -1,4 +1,5 @@
 body {
+  padding-top: 20px;
   background-color: #ddd;
   font-family: Tahoma;
 }
@@ -9,6 +10,11 @@ div#corpo {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 30px #777;
+}
+
+form#busca {
+  font-size: 14px;
+  text-align: right;
 }
 
 table.listagem {
@@ -26,9 +32,9 @@ table.listagem td {
   padding: 10px;
 }
 
-/* table.listagem tr:nth-child(even) {
+table.listagem tr:nth-child(even) {
   background-color: #f2f2f2;
-} */
+}
 
 table.listagem td:nth-child(1) {
   width: 50px;
@@ -42,15 +48,16 @@ table.detalhes {
   width: 100%;
 }
 
-table.detalhes {
-  text-align: center;
-  font-size: 25px;
-}
-
-table.detalhes tr td img {
-  width: 400px;
+table.detalhes td {
+  padding: 10px;
+  vertical-align: top; 
+  /* border: 1px solid black; */
 }
 
 img.mini {
   width: 50px;
+}
+
+img.full {
+  height: 400px;
 }

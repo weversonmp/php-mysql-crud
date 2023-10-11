@@ -5,7 +5,7 @@ if ($banco->connect_errno) {
   die();
 };
 
-$banco->query("set names 'utf8'");
-$banco->query("set character_set_connection=utf8");
-$banco->query("set character_set_client=utf8");
-$banco->query("set character_set_results=utf8");
+// $banco->query("set names 'utf8'");
+// $banco->query("set character_set_connection=utf8");
+// $banco->query("set character_set_client=utf8");
+// $banco->query("set character_set_results=utf8");
