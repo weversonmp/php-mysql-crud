@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	require_once "includes/banco.php";
+	require_once "includes/funcoes.php";
+	?>
 <html lang="en">
 
 <head>
@@ -10,10 +14,6 @@
 </head>
 
 <body>
-	<?php
-	require_once "includes/banco.php";
-	require_once "includes/funcoes.php";
-	?>
 
 	<div id="corpo">
 
@@ -25,7 +25,6 @@
 		<h1>Detalhes do Jogo</h1>
 		<table class='detalhes'>
 			<?php
-
 
 			if (!$busca) {
 				echo "Busca Falhou";
@@ -48,6 +47,8 @@
 		
 	</div>
 	<?php $banco->close(); ?>
+
+	
 </body>
 
 </html>
