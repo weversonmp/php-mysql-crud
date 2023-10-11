@@ -12,11 +12,13 @@
 	<?php
 	require_once "includes/banco.php";
 	require_once "includes/funcoes.php";
+	
 	$ordem = $_GET['o'] ?? 'nome';
 	$chave = $_GET['c'] ?? '';
 
 	?>
 	<div id="corpo">
+		<?php require_once "includes/topo.php";?>
 		<h1>Escolha seu jogo</h1>
 		<form action="index.php" method="get" id="busca">
 			Ordenar:

@@ -4,6 +4,11 @@ body {
   font-family: Tahoma;
 }
 
+p.pequeno {
+  font-size :14px ;
+  text-align: right;
+}
+
 div#corpo {
   width: 800px;
   margin: auto;
