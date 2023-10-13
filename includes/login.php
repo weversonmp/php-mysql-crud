@@ -23,7 +23,7 @@ function gerarHash($senha)
 {
     $txt = cripto($senha);
     $hash = password_hash($txt, PASSWORD_DEFAULT);
-    echo $hash;
+    return $hash;
 }
 
 function testarHash($senha, $hash)

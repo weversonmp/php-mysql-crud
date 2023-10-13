@@ -21,7 +21,7 @@
     ?>
     <div id="corpo">
         <?php require_once "topo.php"; ?>
-        <h1>Escolha seu jogo</h1>
+        <h1 style="margin-bottom: 30px;">Escolha seu jogo</h1>
 
         <form action="index.php" method="get" id="busca">
             Ordenar:

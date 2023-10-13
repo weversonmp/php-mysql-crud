@@ -10,9 +10,20 @@ function thumb($arq)
     }
 }
 
-function voltar()
+function seUsuarioExiste($banco, $user) {
+    $q = "SELECT usuario FROM usuarios WHERE usuario='$user'";
+    $res = $banco->query($q);
+    $res = $res->fetch_object();
+    if ($res->usuario == $user) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function voltar($local = 'index.php')
 {
-    return "<a href='index.php'><span class='material-symbols-outlined'>arrow_back</span></a>";
+    return "<a href='$local'><span class='material-symbols-outlined'>arrow_back</span></a>";
 }
 
 function msg_sucesso($m)

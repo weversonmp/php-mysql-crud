@@ -32,18 +32,20 @@ require_once "includes/login.php";
 <body>
     <div id="corpo">
         <?php
+
+
         $u = $_POST['usuario'] ?? null;
         $s = $_POST['senha'] ?? null;
 
-        if (is_null($u) || is_null($s)) {
-            require "user-login-form.php";
-        } else {
-            $q = "SELECT usuario, nome, senha, tipo FROM usuarios WHERE usuario = '$u' LIMIT 1";
-            $busca = $banco->query($q);
-            if (!$busca) {
-                echo msg_erro('Falha ao acessar o banco!');
+        if (!isset($_SESSION['user'])) {
+            if ($u == null || $s == null) {
+                include_once "user-login-form.php";
             } else {
-                if ($busca->num_rows > 0) {
+                $q = "SELECT usuario, nome, senha, tipo FROM usuarios WHERE usuario = '$u' LIMIT 1";
+                $busca = $banco->query($q);
+                if (!$busca) {
+                    echo msg_erro('Falha ao acessar o banco!');
+                } elseif ($busca->num_rows > 0) {
                     $reg = $busca->fetch_object();
                     if (testarHash($s, $reg->senha) && $u == $reg->usuario) {
                         echo msg_sucesso('Logado com Sucesso!');
@@ -51,14 +53,16 @@ require_once "includes/login.php";
                         $_SESSION['nome'] = $reg->nome;
                         $_SESSION['tipo'] = $reg->tipo;
                     } else {
-
-                        echo msg_erro('Senha inválida');
+                        include_once "user-login-form.php";
+                        echo msg_aviso("Usuario ou Senha Inválidos!");
                     }
                 } else {
                     include_once "user-login-form.php";
-                    echo msg_erro('Usuário não existe');
+                    echo msg_aviso("Usuario ou Senha Inválidos!");
                 }
             }
+        } else {
+            echo msg_sucesso('O usuário: ' . $_SESSION['nome'] . ', Já está logado');
         }
         ?>
         <?= voltar() ?>
