@@ -39,7 +39,7 @@
 					echo  "<tr><td>" . number_format($reg->nota, 1, ".") . " /10.0";
 
 					if (is_admin()) {
-						echo " <a href='user-login.php'><span class='material-symbols-outlined'>add_circle</span></a> <a href='user-login.php'><span class='material-symbols-outlined'>edit</span></a> <a href='user-login.php'><span class='material-symbols-outlined'>delete</span></a>";
+						echo " <a href='user-login.php'><span class='material-symbols-outlined'>add_circle</span></a> <a href='detalhes-edit.php?cod=" . $reg->cod . "'><span class='material-symbols-outlined'>edit</span></a> <a href='user-login.php'><span class='material-symbols-outlined'>delete</span></a>";
 				} elseif (is_editor()) {
 						echo " <a href='user-login.php'><span class='material-symbols-outlined'>edit</span></a> <a href='user-login.php'>";
 				}

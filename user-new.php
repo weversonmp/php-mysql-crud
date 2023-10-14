@@ -34,7 +34,7 @@ require_once "includes/funcoes.php";
                 if ($senha1 === $senha2) {
                     if (empty($usuario) || empty($nome) || empty($senha1) || empty($senha2) || empty($tipo)) {
                         echo msg_erro('Todos os dados são obrigatórios');
-                    } elseif ($usuario == $reg->usuario) {
+                    } else {
                         $senha = gerarHash($senha1);
                         $q = "INSERT INTO usuarios (usuario, nome, senha, tipo) VALUES ('$usuario', '$nome', '$senha', '$tipo')";
                         if ($banco->query($q)) {

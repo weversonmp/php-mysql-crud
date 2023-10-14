@@ -72,7 +72,10 @@
                         echo "<br>($reg->genero) $reg->produtora";
 
                         if (is_admin()) {
-                            echo "<td><a href='user-login.php'><span class='material-symbols-outlined'>add_circle</span></a> <a href='user-login.php'><span class='material-symbols-outlined'>edit</span></a> <a href='user-login.php'><span class='material-symbols-outlined'>delete</span></a>";
+                            echo "<td>
+                            <a href=''><span class='material-symbols-outlined'>add_circle</span></a> 
+                            <a href='detalhes-edit.php?cod=" . $reg->cod . "'><span class='material-symbols-outlined'>edit</span></a> 
+                            <a href='user-login.php'><span class='material-symbols-outlined'>delete</span></a>";
                         } elseif (is_editor()) {
                             echo "<td>";
                             echo "<a href='user-login.php'><span class='material-symbols-outlined'>edit</span></a> <a href='user-login.php'>";
